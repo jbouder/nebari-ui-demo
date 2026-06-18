@@ -1,0 +1,30 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Nebari brand palette (purple primary, derived from @nebari/theme). */
+:root {
+  --ifm-color-primary: #b41ecc;
+  --ifm-color-primary-dark: #a31bb8;
+  --ifm-color-primary-darker: #9a1aae;
+  --ifm-color-primary-darkest: #7f158f;
+  --ifm-color-primary-light: #c233d8;
+  --ifm-color-primary-lighter: #c640db;
+  --ifm-color-primary-lightest: #d268e3;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, a lighter purple is used in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #d86ee8;
+  --ifm-color-primary-dark: #cf52e2;
+  --ifm-color-primary-darker: #ca44df;
+  --ifm-color-primary-darkest: #b81ecc;
+  --ifm-color-primary-light: #e18aee;
+  --ifm-color-primary-lighter: #e698f1;
+  --ifm-color-primary-lightest: #f0c0f7;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}

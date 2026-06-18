@@ -1,0 +1,48 @@
+---
+sidebar_position: 1
+---
+
+# Introduction
+
+Welcome to the **Nebari UI** documentation — the home for docs and live demos of
+the [Nebari design system](https://github.com/nebari-dev/nebari-design).
+
+These docs sit alongside the `nebari-ui-demo` application and are built with
+[Docusaurus](https://docusaurus.io/). They serve two purposes:
+
+- **Document** how the Nebari design system is consumed in a real React + Vite app.
+- **Demo** the components live, so you can see and interact with them right here
+  in the documentation.
+
+## What is the Nebari design system?
+
+The Nebari design system is distributed as a [shadcn](https://ui.shadcn.com/)
+component registry. Components are added to an app on demand with the registry
+configured in `components.json`:
+
+```bash
+npx shadcn@latest add @nebari/button
+npx shadcn@latest add @nebari/spinner
+npx shadcn@latest add @nebari/theme
+```
+
+Under the hood the components are built on:
+
+- **React 19** + **TypeScript**
+- **Tailwind CSS v4** with design tokens in the `oklch` color space
+- **Base UI** primitives for accessible, unstyled behavior
+- A brand **purple** primary color with first-class **light and dark** modes
+
+## Where to go next
+
+- Browse the **Getting Started** section in the sidebar to set up the registry.
+- Check the **Components** section for live, interactive demos (added in the
+  next stage of this project).
+
+:::tip
+
+Want the full app conventions? See
+[`AGENTS.md`](https://github.com/nebari-dev/nebari-ui-demo/blob/main/AGENTS.md)
+in the repository root.
+
+:::

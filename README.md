@@ -35,3 +35,15 @@ npx shadcn@latest add @nebari/theme
 Browse available components: https://github.com/nebari-dev/nebari-design
 
 See [AGENTS.md](./AGENTS.md) for full conventions and coding standards.
+
+## Documentation site
+
+A [Docusaurus](https://docusaurus.io/) site lives in [`docs/`](./docs) and
+documents/demos the Nebari design system. It has its own dependency tree.
+
+```bash
+cd docs
+npm install          # First time only
+npm start            # Dev server (http://localhost:3000)
+npm run build        # Static production build
+```
