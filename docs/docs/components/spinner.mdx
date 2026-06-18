@@ -1,0 +1,38 @@
+---
+sidebar_position: 3
+title: Spinner
+---
+
+import { SpinnerDemo } from '@site/src/components/demos/SpinnerDemo';
+
+# Spinner
+
+A minimal, accessible loading indicator. It renders an animated icon with
+`role="status"` and an `aria-label`. Sizing is controlled with the `size` prop
+(`xs`, `sm`, `default`, `lg`, `xl`), and color follows the current text color.
+
+Add it to your app from the `@nebari` registry:
+
+```bash
+npx shadcn@latest add @nebari/spinner
+```
+
+## Examples
+
+The spinner inherits the current text color, so `text-*` utilities recolor it,
+while the `size` prop scales it.
+
+<SpinnerDemo />
+
+```tsx
+<Spinner size="xs" />
+<Spinner size="sm" />
+<Spinner size="lg" className="text-primary" />
+<Spinner size="xl" className="text-muted-foreground" />
+```
+
+## Inside a Button
+
+The [`Button`](./button) uses the `Spinner` internally for its `loading` state,
+so you rarely render it by hand there — but it's available as a standalone
+component for custom loading UI.

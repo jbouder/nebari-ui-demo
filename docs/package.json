@@ -15,14 +15,20 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@base-ui-components/react": "^1.0.0-rc.0",
     "@docusaurus/core": "3.10.1",
     "@docusaurus/faster": "3.10.1",
     "@docusaurus/preset-classic": "3.10.1",
     "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
+    "@tailwindcss/postcss": "^4.3.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.400.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.1",
+    "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.1",

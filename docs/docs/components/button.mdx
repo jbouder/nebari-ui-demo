@@ -1,0 +1,82 @@
+---
+sidebar_position: 2
+title: Button
+---
+
+import {
+  ButtonVariantsDemo,
+  ButtonSizesDemo,
+  ButtonLoadingDemo,
+} from '@site/src/components/demos/ButtonDemo';
+
+# Button
+
+The `Button` is built from the Nebari Figma spec. Variants and sizes are driven
+by [`class-variance-authority`](https://cva.style/), and polymorphism comes from
+Base UI's `render` prop — so a `Button` can become a link or any other element
+while keeping its styling.
+
+Add it to your app from the `@nebari` registry:
+
+```bash
+npx shadcn@latest add @nebari/button
+```
+
+## Variants
+
+<ButtonVariantsDemo />
+
+```tsx
+<Button variant="default">default</Button>
+<Button variant="secondary">secondary</Button>
+<Button variant="outline">outline</Button>
+<Button variant="destructive">destructive</Button>
+<Button variant="ghost">ghost</Button>
+<Button variant="link">link</Button>
+```
+
+## Sizes
+
+<ButtonSizesDemo />
+
+```tsx
+<Button size="xs">Button xs</Button>
+<Button size="sm">Button sm</Button>
+<Button size="default">Button default</Button>
+<Button size="lg">Button lg</Button>
+```
+
+## Loading & disabled
+
+Pass `loading` to swap the leading icon for a [`Spinner`](./spinner), set
+`aria-busy`, and disable the button while an async action is in flight.
+`loadingText` replaces the label while loading. Click **Save changes** to see it.
+
+<ButtonLoadingDemo />
+
+```tsx
+function SaveButton() {
+  const [loading, setLoading] = useState(false);
+
+  return (
+    <Button
+      loading={loading}
+      loadingText="Saving…"
+      onClick={() => {
+        setLoading(true);
+        window.setTimeout(() => setLoading(false), 2000);
+      }}
+    >
+      Save changes
+    </Button>
+  );
+}
+```
+
+:::note
+
+These are the real Nebari components rendering inside the docs — Tailwind v4 and
+the `oklch` brand tokens are wired into Docusaurus, and they follow the site's
+light/dark toggle in the navbar.
+
+:::

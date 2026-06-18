@@ -1,4 +1,6 @@
+import path from 'path';
 import {themes as prismThemes} from 'prism-react-renderer';
+import tailwindcss from '@tailwindcss/postcss';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
@@ -62,10 +64,35 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: ['./src/css/custom.css', './src/css/tailwind.css'],
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  plugins: [
+    function nebariPlugin(context) {
+      return {
+        name: 'nebari-design-system',
+        // Run Tailwind v4 through Docusaurus's PostCSS pipeline so the Nebari
+        // design-system components can render (see src/css/tailwind.css).
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(tailwindcss);
+          return postcssOptions;
+        },
+        // Map the `@/` alias (used by components pulled from the @nebari shadcn
+        // registry) to the docs `src/` directory, mirroring components.json.
+        configureWebpack() {
+          return {
+            resolve: {
+              alias: {
+                '@': path.resolve(context.siteDir, 'src'),
+              },
+            },
+          };
+        },
+      };
+    },
   ],
 
   themeConfig: {

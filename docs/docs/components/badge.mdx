@@ -1,0 +1,74 @@
+---
+sidebar_position: 1
+title: Badge
+---
+
+import {
+  BadgeVariantsDemo,
+  BadgeWithIconDemo,
+  BadgeAsLinkDemo,
+} from '@site/src/components/demos/BadgeDemo';
+
+# Badge
+
+The `Badge` is a small status/label chip built from the Nebari Figma spec.
+Variants are driven by [`class-variance-authority`](https://cva.style/), and
+polymorphism comes from Base UI's `render` prop — so a `Badge` can become a link
+or button while keeping its styling.
+
+Add it to your app from the `@nebari` registry:
+
+```bash
+npx shadcn@latest add @nebari/badge
+```
+
+## Variants
+
+<BadgeVariantsDemo />
+
+```tsx
+<Badge variant="default">default</Badge>
+<Badge variant="secondary">secondary</Badge>
+<Badge variant="destructive">destructive</Badge>
+<Badge variant="outline">outline</Badge>
+<Badge variant="ghost">ghost</Badge>
+```
+
+## With an icon
+
+A leading icon is sized automatically (`size-3`). Anything you pass as children
+sits beside it with a small gap.
+
+<BadgeWithIconDemo />
+
+```tsx
+<Badge>
+  <CheckIcon />
+  Verified
+</Badge>
+<Badge variant="secondary">3 new</Badge>
+<Badge variant="destructive">Error</Badge>
+```
+
+## As a link
+
+Pass `render` to make the badge a different element. Interaction cues (hover
+underline and fill) are scoped to when it's actually a link or button, so a
+plain status chip stays static while an interactive one gets the right
+affordances.
+
+<BadgeAsLinkDemo />
+
+```tsx
+<Badge render={<a href="/releases" />}>Link badge</Badge>
+<Badge variant="outline" render={<a href="/releases" />}>
+  Outline link
+</Badge>
+```
+
+:::note
+
+These are the real Nebari components rendering inside the docs, pulled from the
+`@nebari` registry. They follow the site's light/dark toggle in the navbar.
+
+:::
