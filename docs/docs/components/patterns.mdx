@@ -1,0 +1,25 @@
+---
+sidebar_position: 4
+title: Patterns
+---
+
+import { Badge } from '@/components/ui/badge';
+
+# Patterns
+
+The Nebari design system is built so components drop straight into your pages.
+Most of the time you just import the component and render it inline — no wrapper,
+no extra setup.
+
+For example, here's the [`Badge`](./badge) used as a simple status label:
+
+<span className="nebari-demo"><Badge>nebari-dev</Badge></span>
+
+```tsx
+import { Badge } from '@/components/ui/badge';
+
+<Badge>nebari-dev</Badge>
+```
+
+That's the whole pattern: import, render, done. Browse the other pages in this
+section for the full set of variants and props each component supports.
